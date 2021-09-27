@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: djangoTest
+      MYSQL_USER: bdp-app-django
+      MYSQL_PASSWORD: bdp-app-django
+      MYSQL_DATABASE: bdp-app-django
+    ports:
+      - 3306:3306
+  web:
+    container_name: battery_diag_pred_app_django
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
