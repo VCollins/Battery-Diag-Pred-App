@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from battery_sentry.views import welcome
+
+from battery_sentry.views import welcome, date, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('welcome.html', welcome)
+    path('', welcome),
+    path('date', date),
+    path('about', about)
 ]
