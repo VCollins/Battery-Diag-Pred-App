@@ -1,2 +1,4 @@
 /battery_diag_pred_app/settings.py
 /battery_diag_pred_app/battery_diag_pred_app/settings.py
+mysql-conn.cnf
+/battery_diag_pred_app/mysql-conn.cnf
